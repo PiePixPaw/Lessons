@@ -1,315 +1,201 @@
-.backgr {
-    background-color: #ffffff;
-    font-family: monospace;
-    z-index: -1;
+.slot_frame {
+    position: fixed;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
-.column1 {
-    position:fixed;
-    top: 30%;
-    left: 45%;
-    right: 35.3%;
+
+.column {
     overflow: hidden;
+    position: relative;
+    height: 150px;
+    width: 50px;
     background-color: #bbd5ee;
-}
-.column2 {
-    position:fixed;
-    top: 30%;
-    left: 45%;
-    right: 35.3%;
-    overflow: hidden;
-    background-color: #bbd5ee00;
-}
-
-.column3 {
-    position:fixed;
-    top: 30%;
-    left: 45%;
-    right: 35.3%;
-    overflow: hidden;
-    background-color: #bbd5ee00;
-}
-
-.column4 {
-    position:fixed;
-    top: 30%;
-    left: 45%;
-    right: 35.3%;
-    overflow: hidden;
-    background-color: #bbd5ee00;
-}
-
-.cherry1, .lemon1,
-.pineapple1, .grape1 {
-    height: 150px;
-    width: 50px;
-    position: relative;
-    display:inline-block;
-    z-index: 1;
+    margin: 0 5px;
     box-shadow: inset 5px 5px 10px #00000080;
 }
 
-.cherry1:before {
+.fruts {
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 60px;
+    width: 50px;
+    display:block;
+    z-index: 1;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    transform: translateY(-60px);
+}
+
+.frut {
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 60px;
+    width: 50px;
+    display:block;
+    z-index: 1;
+    animation-name: spin_rev;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    transform: translateY(-60px);
+}
+
+
+
+.column1 .fruts:nth-child(1),
+.column2 .frut:nth-child(1),
+.column3 .fruts:nth-child(1),
+.column4 .frut:nth-child(1) {
+    animation-delay:  0.2s;
+}
+
+.column1 .fruts:nth-child(2),
+.column2 .frut:nth-child(2),
+.column3 .fruts:nth-child(2),
+.column4 .frut:nth-child(2) {
+    animation-delay:  0.4s;
+}
+
+.column1 .fruts:nth-child(3),
+.column2 .frut:nth-child(3),
+.column3 .fruts:nth-child(3),
+.column4 .frut:nth-child(3) {
+    animation-delay:  0.6s;
+}
+
+.column1 .fruts:nth-child(4),
+.column2 .frut:nth-child(4),
+.column3 .fruts:nth-child(4),
+.column4 .frut:nth-child(4) {
+    animation-delay:  0.8s;
+}
+
+.column1 .fruts:nth-child(5),
+.column2 .frut:nth-child(5),
+.column3 .fruts:nth-child(5),
+.column4 .frut:nth-child(5) {
+    animation-delay:  1s;
+}
+
+
+
+.fruts:before {
+    position: absolute;
+    font-size: 40px;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.frut:before {
+    position: absolute;
+    font-size: 40px;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.cherry:before {
     content:"🍒"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.12s;
-    animation-play-state: paused
 }
 
-.lemon1:before {
+.lemon:before {
     content:"🍋";
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.1s;
-    animation-play-state: paused
 }
 
-.pineapple1:before {
+.banana:before {
+    content:"🍌";
+}
+
+.pineapple:before {
     content: "🍍"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.11s;
-    animation-play-state: paused
 }
 
-.grape1:before {
+.grape:before {
     content: "🍇"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.13s;
-    animation-play-state: paused
 }
 
-.cherry2, .lemon2,
-.pineapple2, .grape2 {
-    height: 150px;
-    width: 50px;
-    position: relative;
-    display:inline-block;
-    z-index: 1;
-    box-shadow: inset 5px 5px 10px #00000080;
-}
-
-.grape2:before {
-    content: "🍇"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.3s;
-    animation-play-state: paused
-}
-.pineapple2:before {
-    content: "🍍";
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.33s;
-    animation-play-state: paused
-}
-
-.cherry2:before {
-    content:"🍒"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.32s;
-    animation-play-state: paused
-}
-
-.lemon2:before {
-    content:"🍋";
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.31s;
-    animation-play-state: paused
-}
-
-.cherry3, .lemon3,
-.pineapple3, .grape3 {
-    height: 150px;
-    width: 50px;
-    position: relative;
-    display:inline-block;
-    z-index: 1;
-    box-shadow: inset 5px 5px 10px #00000080;
-}
-
-.grape3:before {
-    content: "🍇"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.7s;
-    animation-play-state: paused
-}
-.pineapple3:before {
-    content: "🍍"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.6s;
-    animation-play-state: paused
-}
-
-.cherry3:before {
-    content:"🍒"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.64s;
-    animation-play-state: paused
-}
-
-.lemon3:before {
-    content:"🍋";
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.62s;
-    animation-play-state: paused
-}
-
-.cherry4, .lemon4,
-.pineapple4, .grape4 {
-    height: 150px;
-    width: 50px;
-    position: relative;
-    display:inline-block;
-    z-index: 1;
-    box-shadow: inset 5px 5px 10px #00000080;
-}
-
-.grape4:before {
-    content: "🍇"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.921s;
-    animation-play-state: paused
-}
-.pineapple4:before {
-    content: "🍍"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 1.1s;
-    animation-play-state: paused
-}
-
-.cherry4:before {
-    content:"🍒"; 
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.9s;
-    animation-play-state: paused
-}
-
-.lemon4:before {
-    content:"🍋";
-    font-size: 40px;
-    position: absolute;
-    top: -40%;
-    transition: all 1s ease-in-out;
-    animation: spin 0.4s linear infinite 0.94s;
-    animation-play-state: paused
-}
 
 @keyframes spin {
     100% {
-        transform: translateY(260px);
+        transform: translateY(240px);
     }
     0% {
-        transform: translateY(-50px);
+        transform: translateY(-60px);
+    }
+} 
+
+
+@keyframes spin_rev {
+    100% {
+        transform: translateY(-60px);
+    }
+    0% {
+        transform: translateY(240px);
     }
 } 
 
 .spin_b {
     position: absolute;
-    top: 50%;
-    left: 41.5%;
-    height: 50px;
-    width: 300px;
+    top: 55%;
+    left: 50%;
+    height: 60px;
+    width: 60px;
+    transform: translate(-50%, -45%);
 	border: none;
-	background:  #bbd5ee;
+	background:  #c54e58;
 	color: #ffffff;
-	padding: 10px;
-	font-size: 18px;
-	border-radius: 5px;
-	box-sizing: border-box;
-	transition: all 500ms ease; 
-    transform-style: preserve-3d;
-    box-shadow: 5px 5px 10px #00000080;
+	font-size: 20px;
+    box-shadow: inset 0px 0px 15px #00000080;
     cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding-top: 5px;
+    font-family: monospace
 }
 
-.spin_b:after {
-	top: -100%;
-	left: 0;
-    height: 50px;
-	width: 100%;
-	position: absolute;
-	background: #9c2121da;
-	border-radius: 5px;
-	content: 'Poooof!';
-	transform-origin: left bottom;
-    box-shadow: 5px 5px 10px #00000080;
-	transform: rotateX(90deg);
-}
 
-.spin_b:hover {
-	transform-origin: center bottom;
-	transform: rotateX(-90deg) translateY(100%);
-}
+/* .spin_b:hover {
+	background-color: rgb(48, 128, 78);
+} */
 
-#btn:checked ~ .slot_frame .cherry1:before,
-#btn:checked ~ .slot_frame .lemon1:before,
-#btn:checked ~ .slot_frame .pineapple1:before,
-#btn:checked ~ .slot_frame .grape1:before,
 
-#btn:checked ~ .slot_frame .cherry2:before,
-#btn:checked ~ .slot_frame .lemon2:before,
-#btn:checked ~ .slot_frame .pineapple2:before,
-#btn:checked ~ .slot_frame .grape2:before,
-
-#btn:checked ~ .slot_frame .cherry3:before,
-#btn:checked ~ .slot_frame .lemon3:before,
-#btn:checked ~ .slot_frame .pineapple3:before,
-#btn:checked ~ .slot_frame .grape3:before,
-
-#btn:checked ~ .slot_frame .cherry4:before,
-#btn:checked ~ .slot_frame .lemon4:before,
-#btn:checked ~ .slot_frame .pineapple4:before,
-#btn:checked ~ .slot_frame .grape4:before {
+/* #btn:checked ~ .slot_frame .fruts,
+#btn:checked ~ .slot_frame .frut {
     animation-play-state:running;
+    filter: blur(30px);
+} */
+
+
+button:active ~ .slot_frame .fruts,
+button:active ~ .slot_frame .frut {
+    animation-play-state:running;
+    filter: blur(30px); 
 }
 
-.red_line {
-    width: 220px;
+/* #btn:checked ~ .red_line {
+    opacity: 0;
+
+} */
+
+/* .red_line {
+    width: 228px;
     border: 1px solid red;
     position:fixed;
-    top: 37.5%;
-    left: 45%;
-    right: 30%;
-}
+    top: 35%;
+    left: 42%;
+    opacity: 1;
+}  */
+
