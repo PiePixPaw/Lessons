@@ -203,6 +203,10 @@ button:active ~ .slot_frame .frut {
     filter: blur(2px); 
 }
 
+button:active {
+    background:  #27b64b;
+}
+
 /* #btn:checked ~ .red_line {
     opacity: 0;
 
