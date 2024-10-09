@@ -90,6 +90,24 @@
 
 
 
+.column1 .fruts {
+    animation-duration: 0.5s;
+}
+
+.column2 .frut {
+    animation-duration: 0.5s;
+}
+
+.column3 .fruts {
+    animation-duration: 0.5s;
+}
+
+.column4 .frut {
+    animation-duration: 0.5s;
+}
+
+
+
 .fruts:before {
     position: absolute;
     font-size: 40px;
@@ -182,7 +200,7 @@
 button:active ~ .slot_frame .fruts,
 button:active ~ .slot_frame .frut {
     animation-play-state:running;
-    filter: blur(30px); 
+    filter: blur(2px); 
 }
 
 /* #btn:checked ~ .red_line {
