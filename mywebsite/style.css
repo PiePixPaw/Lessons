@@ -6,6 +6,7 @@
 body {
     font-family: arial;
     background-color: #e0e0e0;
+    margin: 0;
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
 
 .top_banner {
     text-align: center;
-    background: linear-gradient(25deg, #f1b340, #f14040);
+    background-color: #302a2a;
     color: #e0e0e0;
     font-size: 20px;
     padding-top: 5px;
@@ -146,8 +147,7 @@ header img {
 
 .products {
     background-color: #ffffff;
-    margin-top: 35px;
-    margin-bottom: 40px;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
@@ -220,8 +220,6 @@ header img {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: 5px;
-    gap: 10px;
     width: 100%;
 }
 
@@ -229,26 +227,25 @@ header img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(50% - 5px);
-    background-color: rgb(167, 138, 86) ;
-    box-shadow: 0 0 5px rgb(117, 116, 116);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.content-container:hover {
-    transform: scale(1.02);
+    width: 50%;
 }
 
 
 .content-container a{
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
     text-decoration: none;
-    color: black;
-    background-color: white;
-    box-shadow: 0 0 5px rgb(88, 88, 88);
+    color: white;
+    background-color: #232F3E;
+}
+
+.content-container .btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.content-container .btn:hover {
+    transform: scale(0.95);
 }
 
 .content-container img {
@@ -267,21 +264,21 @@ header img {
 
 
 .top-left-banner {
-    background: radial-gradient(white, rgb(211, 65, 199));
+    background-image: radial-gradient(circle at 85.36% 111.24%, #fffff4 0, #fff8d6 25%, #f2deb5 50%, #dec495 75%, #cdad79 100%);
 }
 
 .top-right-banner {
-    background: linear-gradient(rgb(255, 181, 97), rgb(230, 233, 58));
-    align-items:flex-start;
+    background-image: linear-gradient(15deg, #e4ffff 0, #c2eeff 25%, #9dd5f2 50%, #77bce0 75%, #51a5cf 100%);
+    align-items: flex-start;
 }
 
 .bottom-left-banner {
-    background: linear-gradient(85deg, rgb(255, 255, 255), rgb(47, 149, 231));
-    align-items:flex-start;
+    background-image: linear-gradient(200deg, #e4ffff 0, #c2eeff 25%, #9dd5f2 50%, #77bce0 75%, #51a5cf 100%);
+    align-items: flex-start;
 }
 
 .bottom-right-banner {
-    background: linear-gradient(-85deg, rgb(255, 255, 255), rgb(208, 221, 90));
+    background-image: radial-gradient(circle at -14.09% 20.12%, #fffff4 0, #fff8d6 25%, #f2deb5 50%, #dec495 75%, #cdad79 100%);
     
 }
 
@@ -289,24 +286,56 @@ header img {
     transform: rotate(-20deg);
 }
 
+.promo img {
+    max-height: 300px;
+    
+}
+
 /*full size banner*/
 
 .background-banner {
-    background-image: url(widemob.jpg);
-    background-size: cover;
-    height: 300px;
-    width: auto;
-    margin-bottom: 15px;
+    position: relative;
+    height: 400px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
 
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease;
 }
 
 .background-banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    height: 300px;
+    gap: 30px;
     justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: 2;
+}
+
+
+.background-banner-content img {
+    filter: invert(100%);
+} 
+
+.background-banner:hover .background-video{
+    filter: blur(10px);
+}
+
+
+.background-banner:hover  .background-banner-content{
+    opacity: 1;
 }
 
 .background-banner-content img, .background-banner-second-content img{
@@ -316,7 +345,7 @@ header img {
 
 .background-banner-content a, .background-banner-second-content a {
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -334,14 +363,17 @@ header img {
 div .background-banner-title {
     font-size: 30px;
     font-weight: bold;
-    color: #df4242;
+    color: #e0e0e0;
+    text-transform: uppercase;
 }
+
 
 
 /* second wide banner */
 
 .background-banner-second {
     position: relative;
+    margin: 30px 0 0;
 }
 
 .banner-second-back-img img{
@@ -350,6 +382,7 @@ div .background-banner-title {
     max-height: 300px;
     object-fit: cover;
     object-position: 0 0;
+    display: block;
 }
 .banner-second-back-img:before {
     content: "";
@@ -358,7 +391,7 @@ div .background-banner-title {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000069;
+    background-color: #2165e23b;
 }
 
 
