@@ -2,7 +2,7 @@
 
 :root {
     --primary-color:#F2EDE4;
-    --secondary-color:#F2C572;
+    --secondary-color:#bd9b5e;
     --background-color-primary: #1a1919;
     --background-color-secondary: #40403E;
     --text-color: #1a1919;
@@ -381,12 +381,28 @@ body {
 /*main*/
 /*main products*/
 .main {
-    color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.main__background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.main__background img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(40%);
 }
 
 
 .main h1 {
-    color: var(--background-color-primary);
     font-size: 1.5rem;
     text-transform: uppercase;
 }
@@ -475,6 +491,7 @@ body {
     opacity: 0;
     font-size: 20px;
     transition: all 0.5s ease-in-out;
+    color: var(--primary-color);
 }
 
 .subcategory__item img:hover ~ .cells .cell{
