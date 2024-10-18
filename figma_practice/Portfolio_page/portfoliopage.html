@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<title>This is the title</title>
+        <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="style.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,25 +13,28 @@
 
     </head>
     <body>
+        <div id="home"></div>
         <header class="header">
             <div class="container">
                 <div class="header__wrap">
                     <div><img src="logo.png" alt="logo"></div>
                     <nav>
-                        <a href="#">Home</a>
-                        <a href="#">Projects</a>
-                        <a href="#">Expirience</a>
-                        <a href="#">Contact</a>
+                        <a href="#home">Home</a>
+                        <a href="#proj">Projects</a>
+                        <a href="#expir">Expirience</a>
+                        <a href="#contct">Contact</a>
                     </nav>
                 </div>
             </div>
         </header>
-
         <main class="main">
                 <section class="intro">
                     <div class="container">
                         <div class="intro__wrap">
-                            <div class="intro__ava"><img src="avatar.png" alt="ava"></div>
+
+                            <div class="intro__ava">
+                                <img src="avatar.png" alt="ava">
+                            </div>
                             <h1>I do code and<br>
                                 make content <span>about it!</span> </h1>
                             <p >
@@ -46,10 +50,105 @@
                         </div>
                     </div>
                 </section>
+                <section class="exp" >
+                    <div class="container">
+                        <div class="exp__wrap">
+                            <div class="exp__title">
+                                <h2>EXPERIENCE WITH</h2>
+                            </div>
+                            <div class="exp__icon">
+                                <img src="icons/javascript.png" alt="JS">
+                                <img src="icons/nodejs.png" alt="node">
+                                <img src="icons/html.png" alt="html5">
+                                <img src="icons/css.png" alt="css3">
+                                <img src="icons/reactjs.png" alt="react">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+                <section class="projects" id="proj">
+                    <div class="containter">
+                        <div class="projects__wrap">
+                            <div class="project__title">
+                                <h2>PROJECTS</h2>
+                            </div>
+                            <div class="project__list">
+                                <a class="project__item" href="#">
+                                    <img src="project-thumbnail-1.png" alt="html">
+                                    <div class="project__item__footer">
+                                        <p>CLICK HERE TO VISIT</p>
+                                        <h3>HTML TUTORIAL</h3>
+                                        <img class="project__item__arrow"  src="icons/View Icon.png" alt="arrow">
+                                    </div>
+                                </a>
+
+                                <a class="project__item" href="#">
+                                    <img src="project-thumbnail-2.png" alt="html">
+                                    <div class="project__item__footer">
+                                        <p>CLICK HERE TO VISIT</p>
+                                        <h3>CSS TUTORIAL</h3>
+                                        <img class="project__item__arrow" src="icons/View Icon.png" alt="arrow">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="knowledge" id="expir">
+                    <div class="container">
+                        <div class="knowledge__wrap">
+                            <h2>EXPIRIENCE</h2>
+                            <div class="knowledge__item">
+                                <div class="title">
+                                    <img src="icons/google-logo.png" alt="google">
+                                    <h3>Lead Software Engineer at Google</h3>
+                                    <span>Nov 2019 - Present</span>
+                                </div>
+                                <p>As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.</p>
+                            </div>
+
+                            <div class="knowledge__item">
+                                <div class="title">
+                                    <img src="icons/apple-logo.png" alt="apple">
+                                    <h3>Junior Software Engineer at Apple</h3>
+                                    <span>Jan 2016 - Dec 2017</span>
+                                </div>
+                                <p>During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team.</p>
+                            </div>
+
+                            <div class="knowledge__item">
+                                <div class="title">
+                                    <img src="icons/meta-logo.png" alt="meta">
+                                    <h3>Software Engineer at Meta</h3>
+                                    <span>Jan 2017 - Oct 2019</span>
+                                </div>
+                                <p>At Meta, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
         </main>
-
         <footer class="footer">
-
+            <div class="container">
+                <div class="footer__wrap" id="contct">
+                    <h2>Contact</h2>
+                    <p>Seasoned Full Stack Software Engineer with over 8 years of hands-on experience in designing
+                        and implementing robust, scalable, and innovative web solutions. Adept at leveraging a
+                        comprehensive skill set encompassing front-end and back-end technologies </p>
+                    <div class="mail">
+                        <img src="icons/Email Icon.png" alt="mail icon">
+                        <span>abcdefge@gmail.com</span>
+                    </div>
+                    <div class="media__icons">
+                        <a href="#"><img src="icons/instagram.png" alt="insta"></a>
+                        <a href="#"><img src="icons/x.png" alt="x"></a>
+                        <a href="#"><img src="icons/youtube.png" alt="youtube"></a>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
     </html>
