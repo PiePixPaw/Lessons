@@ -1,0 +1,339 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.ironman {
+	--display-grdient: linear-gradient(#A9170B 9%, #851209 100%);
+	--poster-gradient: linear-gradient(transparent 0%, #B61D11 60%, #BA2C1F 100%);
+}
+
+.venom {
+	--display-grdient: linear-gradient(#2c2a2a 9%, #444242 100%);
+	--poster-gradient: linear-gradient(transparent 0%, #3b3635 60%, #0c0b0b 100%);
+}
+
+.groot {
+	--display-grdient: linear-gradient(#5e421d 9%, #7a5627 100%);
+	--poster-gradient: linear-gradient(transparent 0%, #7a5627 60%, #5e421d 100%);
+}
+
+html, body {
+	overflow: clip;
+}
+
+
+::-webkit-scrollbar {
+	width: 1px;
+	height: 1px;
+	background-color: #851209;
+}
+  
+::-webkit-scrollbar-button {
+	width: 1px;
+	height: 1px;
+}
+
+
+.scene {
+	--scene-width: 100vw;
+    --scene-height: 100vh;
+
+	--scene-container-width: 100vh;
+
+	width: var(--scene-container-width);
+    height: calc(1 * var(--scene-width));
+    transform: rotate(-90deg) translateY(calc(var(--scene-container-width) * -1));
+    transform-origin: top right;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* scroll-snap-type: y proximity; */
+
+
+}
+
+
+
+.main__display {
+	background: var(--display-grdient);	
+	padding-block: 16vmin;
+	padding-inline: 6.6vmin;
+
+
+	scroll-snap-align: end;
+    width: var(--scene-width);
+    height: var(--scene-height);
+    transform:
+            rotate(90deg)
+            translateY(calc(var(--scene-width) - var(--scene-height)))
+            translateX(var(--scene-height));
+
+    margin-top: calc(var(--scene-width) - var(--scene-height));
+
+
+    transform-origin: top right;
+
+}
+
+
+
+.poster__body {
+	position: relative;
+	display: grid;
+	grid-template: auto 4fr auto / 1fr;
+	background: var(--poster-gradient);
+	height: 100%;
+
+
+		.main__image {
+			position: absolute;
+			top: 0;
+			bottom: -5%;
+			right: 20%;
+			z-index: 1;
+			pointer-events: none;
+
+				.ironman & {
+					animation: scale-start 2s ease-in-out 1s;
+
+				}
+
+				/* .venom & img{
+					animation: paralax-venom linear both;
+  					animation-timeline: view(block 100% 0%);
+  					animation-range: contain 0% cover 100%;
+				} */
+
+				img {
+					display: block;
+					width: auto;
+					height: 100%;
+					/* animation: paralax ease-out forwards;
+					animation-timeline: scroll(Y); */
+				}
+
+				.ironman & img {
+					animation-name: paralax-ironman;
+				}
+
+				/* .venom & img {
+					animation-name: paralax-venom;
+				} */
+
+		}
+
+}
+
+
+.subanim{
+		animation-timeline: view(block 100% 10%);
+		animation-name: appear;
+		animation-fill-mode: both;
+		animation-duration: 1ms;
+}
+
+
+
+@keyframes appear {
+	from {
+	  opacity: 0;
+	  transform: scaleX(0);
+	}
+  
+	to {
+	  opacity: 1;
+	  transform: scaleX(1);
+	}
+  }
+
+
+.blast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vmin;
+    height: 100vmin;
+    background-image: url('poster_main_img/Blue-Light-Effect-PNG-Cutout.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: blastAppear 1s 3s forwards, blastDisappear 1s 4s forwards;
+	z-index: 5;
+	pointer-events: none;
+}
+
+
+
+/*ironman*/
+
+@keyframes scale-start {
+	0%{
+		transform: scale(0.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+@keyframes blastAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+
+@keyframes blastDisappear {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+
+
+@keyframes paralax-ironman {
+
+	0%{
+		transform: scale(1);
+	}
+
+	50%{
+		transform: scale(0.5);
+	}
+
+	100%{
+		transform: scale(0.5);
+	}
+
+}
+
+/* @keyframes paralax-venom {
+
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100%{
+		transform: rotate(180deg);
+	}
+} */
+
+
+
+.header__list {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: auto 1fr auto;
+	padding-block: 5px;
+	gap:50px;
+	color: white;
+	height: 60px;
+	align-items: center;
+	
+		
+
+
+		.logo {
+			display: flex;
+			padding-left: 20px;
+			gap: 1px;
+			font-family: "Saira Condensed", sans-serif;
+			pointer-events: none;
+
+				span:first-child {
+					background-color: white;
+					color: #851209;
+					font-weight: bold;
+					border-top: 2px solid white;
+					border-bottom: 2px solid white;
+				}
+				span:last-child {
+					border-top: 2px solid #C4C4C4;
+					border-bottom: 2px solid #C4C4C4;
+					font-weight: bold;
+					font-size: 16px;
+				}
+
+		}
+
+		.links {
+			display: flex;
+			gap: 10px;
+			font-family: "Red Hat Display", sans-serif;
+
+				a {
+					text-decoration: none;
+					color: white;
+				}
+		}
+
+
+		.profile {
+			display: flex;
+			padding-right: 20px;
+			font-family: "Red Hat Display", sans-serif;
+			font-size: 16px;
+			gap: 10px;
+		}
+}
+
+.main__list {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+
+		.main__item {
+			position: relative;
+			
+
+				h1 {
+					font-size:min(calc(((100vw - 13.2vmin) / var(--font-lenght)) * 2.1), 400px);
+					margin: 0;
+					margin-left: -0.05em;
+					text-box-trim: trim-both;
+    				text-box-edge: cap alphabetic;
+					letter-spacing: -0.07em;
+					color: #ffffff;
+					text-shadow: -5px 0 20px #FFFFFF;
+					font-family: "Saira Condensed", sans-serif;
+					pointer-events: none;
+				}
+
+		}
+
+
+}
+
+.footer__list {
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+	padding-inline: 20px;
+	padding-block: 20px;
+
+
+	.footer__links {
+		justify-self:end;
+
+
+	}
+
+	
+	.footer__comp {
+		color: white;
+		font-family: "Red Hat Display", sans-serif;
+
+	}
+}
