@@ -10,16 +10,23 @@
     margin-inline: auto;
 }
 
-
-
-.main__wrap {
-
+.parent {
+    width: 500px;
+    padding: 15px;
+    margin-inline: auto;
+    border: 1px solid black;
+    text-align: justify;
 }
 
-
-
-
-
+.child {
+    float: right;
+    width: 100px;
+    height: 50px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    border: 1px solid green;
+}
 
 
 
