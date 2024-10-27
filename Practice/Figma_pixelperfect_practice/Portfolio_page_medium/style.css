@@ -137,6 +137,7 @@ h2 {
 			border-radius: 230px;
 			transform: rotate(-55deg);
 			filter: blur(300px);
+			pointer-events: none;
 		}
 
 		.contact__us__btn a{
@@ -167,6 +168,7 @@ h2 {
 		border-radius: 230px;
 		transform: rotate(65deg);
 		filter: blur(300px);
+		pointer-events: none;
 	}
 
 	.intro__text {
@@ -341,6 +343,7 @@ h2 {
 				border-radius: 230px;
 				transform: rotate(54deg);
 				filter: blur(300px);
+				pointer-events: none;
 			}
 	
 			.large__gradient {
@@ -353,6 +356,7 @@ h2 {
 				border-radius: 230px;
 				transform: rotate(65deg);
 				filter: blur(300px);
+				pointer-events: none;
 			}
 		}
 }
@@ -411,7 +415,6 @@ h2 {
 
 .portfolio__section__wrap {
 
-
 	h2 {
 		padding-bottom: 70px;
 	}
@@ -455,7 +458,7 @@ h2 {
 
 			.plus {
 				position: absolute;
-				top: 13%;
+				top: 1%;
 				right: 3%;
 			}
 		}
@@ -465,3 +468,27 @@ h2 {
 
 	
 }
+
+/*FOOTER*/
+.footer{
+	background-color: var(--background-primary-color);
+}
+
+.footer__wrap {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-block: 22px;
+	align-items: center;
+	padding-block: 50px 100px;
+
+	.copywriting a {
+		font-size: 16px;
+		text-decoration: none;
+		color: var(--secondary-color);
+		font-weight: 400;
+
+	}
+}
+
+
