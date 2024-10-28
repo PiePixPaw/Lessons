@@ -22,6 +22,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-timeline: --headerTimeline y;
 }
 
 .container {
@@ -31,17 +32,21 @@ html {
 
 body {
 	font-family: var(--default-font-family);
+	overflow-x: hidden;
+
 }
 
 /*Navigation*/
 nav {
 	display: flex;
 	gap: 40px;
+	color: var(--secondary-color);
+	font-size: 18px;
 
 	a {
 		text-decoration: none;
-		color: var(--secondary-color);
-		font-size: 18px;
+		color: currentColor;
+		font-size: inherit;
 
 		&:hover {
 			color: var(--primary-color);
@@ -118,10 +123,11 @@ h2 {
 
 /*HEADER*/
 .header {
+	left: 50%;
+	top: 0;
 	background-color: var(--background-primary-color);
 
 	.header__wrap {
-		position: relative;
 		display: flex;
 		justify-content: space-between;
 		padding-block: 22px;
@@ -144,6 +150,35 @@ h2 {
 			width: 160px;
 		}
 	}	
+}
+
+.header nav {
+
+	animation: header-animation;
+	animation-timeline: --headerTimeline;
+}
+
+@keyframes header-animation {
+
+	0% {
+		flex-direction: row;
+	}
+
+	10%, 100% {
+		flex-direction: column;
+		position: fixed;
+		top: 10%;
+		left: calc(50vw - 600px);
+		transform:translate(-120%, 0);
+		z-index: 5;
+		background-color: #5454d460;
+		color: var(--secondary-color);
+		border-radius: 10px;
+		align-items: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		padding: 5px;
+	}
 }
 
 /*SECTIONS*/
@@ -358,6 +393,20 @@ h2 {
 				filter: blur(300px);
 				pointer-events: none;
 			}
+
+			.medium__gradient{
+				background: linear-gradient(180deg, rgba(84, 84, 212, 0.2) 0%, rgba(84, 84, 212, 0.084) 100%);
+				position: absolute;
+				width: 600px;
+				height: 650px;
+				bottom: -50%;
+				right: -40%;
+				border-radius: 230px;
+				transform: rotate(-125deg);
+				filter: blur(300px);
+				pointer-events: none;
+		
+			}
 		}
 }
 
@@ -365,7 +414,8 @@ h2 {
 	display: grid;
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(3, 1fr);
-	gap: 24px;
+	gap: 18px;
+	
 
 		.section__title {
 			grid-column: 1/4 ;
@@ -414,9 +464,168 @@ h2 {
 }
 
 .portfolio__section__wrap {
+	position: relative;
 
 	h2 {
 		padding-bottom: 70px;
+	}
+
+	.portfolio__symbols {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		pointer-events: none;
+		max-width: 1200px;
+
+		.circles {
+			position: absolute;
+			top: 10%;
+			right: 3%;
+			transform: rotate(-27deg);
+		}
+
+		.lightning {
+			position: absolute;
+			bottom: -15%;
+			left: -5%;
+		}
+	}
+	
+}
+
+.portfolio__project__slider {
+	position: relative;
+	width: 1200px;
+	height: 424px;
+
+	.portfolio__projects__list {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+		width: 100%;
+
+		.projects__item {
+			padding: 24px;
+			transition: all 0.5s ease-in-out;
+			background-color: #1E1E20;
+			cursor: pointer;
+		}
+
+		.item1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.item2 {
+			position: absolute;
+			top: 58px;
+			left: 408px;
+		}
+		
+		.item3 {
+			position: absolute;
+			top: 116px;
+			left: 813px;
+		}
+
+		/*item1__checked */
+		#check1:checked ~ .item1 {
+			top:50%;
+			left: 75%;
+			z-index: 2;
+			transform: translate(-75%, -50% ) scale(2);
+			background-color: transparent;
+		}
+
+		#check1:checked ~ .item2 {
+			top: -10%;
+			left: 0;
+			transform: scale(0.8);
+		}
+
+		#check1:checked ~ .item3 {
+			top: 40%;
+			left: 0;
+			transform: scale(0.8);
+		}
+		
+		/*item2__checked */
+		#check2:checked ~ .item2 {
+			top:50%;
+			left: 75%;
+			z-index: 2;
+			transform: translate(-75%, -50% ) scale(2);
+			background-color: transparent;
+		}
+
+		#check2:checked ~ .item1 {
+			top: -10%;
+			left: 0;
+			transform: scale(0.8);
+		}
+
+		#check2:checked ~ .item3 {
+			top: 40%;
+			left: 0;
+			transform: scale(0.8);
+		}
+
+		/*item3__checked */
+		#check3:checked ~ .item3 {
+			top:50%;
+			left: 75%;
+			z-index: 2;
+			transform: translate(-75%, -50% ) scale(2);
+			background-color: transparent;
+		}
+
+		#check3:checked ~ .item1 {
+			top: -10%;
+			left: 0;
+			transform: scale(0.8);
+		}
+
+		#check3:checked ~ .item2 {
+			top: 40%;
+			left: 0;
+			transform: scale(0.8);
+		}
+
+		/* radiobutton design */
+		.radiobutton1:before {
+			position: absolute;
+			left: 48%;
+			top: 466px;
+			content: url("icons/Ellipse\ 49.png");
+		}
+
+		#check1:checked ~ .radiobutton1:before{
+			content: url("icons/Rectangle\ 9544.png");
+		}
+
+		.radiobutton2:before {
+			position: absolute;
+			left: 50%;
+			top: 466px;
+			content: url("icons/Ellipse\ 49.png");
+		}
+
+		#check2:checked ~ .radiobutton2:before{
+			content: url("icons/Rectangle\ 9544.png");
+		}
+
+		.radiobutton3:before {
+			position: absolute;
+			left: 52%;
+			top: 466px;
+			content: url("icons/Ellipse\ 49.png");
+		}
+
+		#check3:checked ~ .radiobutton3:before{
+			content: url("icons/Rectangle\ 9544.png");
+		}
+		
 	}
 }
 
@@ -429,6 +638,7 @@ h2 {
 		display: flex;
 		gap: 173px;
 		align-items: center;
+		overflow: hidden;
 
 
 		h2 {
@@ -458,7 +668,7 @@ h2 {
 
 			.plus {
 				position: absolute;
-				top: 1%;
+				top: 20%;
 				right: 3%;
 			}
 		}
@@ -492,3 +702,76 @@ h2 {
 }
 
 
+/* Lightbox */
+
+
+.lightbox {
+	left: 50%;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #222422bd;
+	z-index: 1000;
+
+	form {
+		position: relative;
+		width: 300px;
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
+		background-color: var(--primary-color);
+		color: var(--font-primary-color);
+		margin: 0 auto;
+		margin-block: 30vh;
+		border-radius: 15px;
+
+		.form__header {
+			padding-bottom: 15px;
+		}
+
+		button {
+			background-color: #49ad51;
+			color: var(--font-primary-color);
+			padding-block: 10px;
+			border-radius: 5px;
+		}
+
+		input {
+			border-radius: 5px;
+			padding-block: 5px;
+		}
+
+		label {
+			font-size: 14px;
+		}
+
+		.modal-close {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			width: auto;
+
+			img {
+				width: 24px;
+				filter: invert(100%);
+			}
+		}
+	}
+}
+
+.lightbox:target {
+	display: block;
+}
+
+html:target {
+	overflow: hidden;
+}
+
+html:target .lightbox{
+	display: block;
+}

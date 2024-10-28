@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="hideoverflow">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -88,6 +88,7 @@
                     <div class="service__section__list">
                         <div class="gradient__wrap">
                             <div class="small__gradient"></div>
+                            <div class="medium__gradient"></div>
                             <div class="large__gradient"></div>
                         </div>
                         <div class="service__symbols">
@@ -150,11 +151,32 @@
             <div class="portfolio__section" id="project">
                 <div class="container">
                     <div class="portfolio__section__wrap">
+                        <div class="portfolio__symbols">
+                            <img class="circles" src="icons/circles.svg" alt="circles">
+                            <img class="lightning" src="icons/lightning.svg" alt="lightning">
+                        </div>
                         <h2>Our Awesome Portofolio</h2>
-                        <div class="portfolio__example">
-                            <img src="images/image 28.png" alt="game" class="example1">
-                            <img src="images/image 29.png" alt="interior" class="example2">
-                            <img src="images/image 30.png" alt="purpose" class="example3">
+                        <div class="portfolio__project__slider">
+                            <div class="portfolio__projects__list">
+                                <input type="radio" name="slider" id="check1" hidden>
+                                <input type="radio" name="slider" id="check2" hidden>
+                                <input type="radio" name="slider" id="check3" hidden>
+
+                                <div class="radiobutton1"></div>
+                                <div class="radiobutton2"></div>
+                                <div class="radiobutton3"></div>
+
+                                <label class="projects__item item1" for="check1">
+                                    <img  src="images/image 28.png" alt="game" class="example1">
+                                </label>
+                                <label class="projects__item item2" for="check2">
+                                    <img src="images/image 29.png" alt="interior" class="example2">
+                                </label>
+                                <label class="projects__item item3" for="check3">
+                                    <img src="images/image 30.png" alt="purpose" class="example3">
+                                </label>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,7 +190,28 @@
                                 <img class="plus" src="icons/plus.svg" alt="plus">
                             </div>
                             <h2>Contact us for the service <br> you  want to use</h2>
-                            <a class="btn-primary btn" href="#">Contact us</a>
+                            <a class="btn-primary btn" href="#lbox">Contact us</a>
+                            <dialog class="lightbox" id="lbox">
+                                <form action="">
+                                    <a class="modal-close" href="#contact"><img src="icons/remove.png"></a>
+                                    <div class="form__header">
+                                        <h3>Follow Up Call</h3>
+                                        <p>Enter your details to receive a call back from us</p>
+                                    </div>
+                                    <input type="text" id="name" list="datalistname">
+                                    <label for="name">First Name</label>
+                                    <datalist id="datalistname">
+                                        <option value="Nikolay"></option>
+                                        <option value="sedfsdf"></option>
+                                        <option value="vvvv"></option>
+                                    </datalist>
+                                    <input type="email" id="mail">
+                                    <label for="mail">Email</label>
+                                    <input type="tel" id="phone">
+                                    <label for="phone">Phone Number</label>
+                                    <button>Submit</button>
+                                </form>
+                            </dialog>
                         </div>
                     </div>
                 </div>
