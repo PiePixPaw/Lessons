@@ -137,7 +137,7 @@ h2 {
 	.header__wrap {
 		display: flex;
 		justify-content: space-between;
-		padding-block: 22px;
+		padding-block: 40px 0;
 		align-items: center;
 
 		.medium__gradient {
@@ -160,7 +160,7 @@ h2 {
 }
 
 .header nav {
-
+	padding-left: 45px;
 	animation: header-animation;
 	animation-timeline: --headerTimeline;
 }
@@ -242,6 +242,7 @@ h2 {
 /*intro*/
 .intro {
 	background-color: var(--background-primary-color);
+	padding-top: 105px;
 }
 
 .intro__wrap {
@@ -264,11 +265,11 @@ h2 {
 	}
 
 	.intro__text {
-		padding-top: 124px;
+		padding-top: 40px;
 
 		h1 {
 			color: var(--font-primary-color);
-			font-size: 80px;
+			font-size: 73px;
 			font-weight: 800;
 			font-family: var(--header-font-family);
 			line-height: 84px;
@@ -276,6 +277,7 @@ h2 {
 
 		p {
 			padding-block: 24px 50px;
+			max-width: 580px;
 		}
 	}
 
@@ -290,11 +292,12 @@ h2 {
 			.user-photo {
 				position: relative;
 				z-index: 2;
+				max-width: 494px;
 			}
 	
 			.rectangle { 
 				position: absolute;
-				top: 60px;
+				top: 69px;
 				left: -20px;
 				z-index: 1;
 			}
@@ -309,29 +312,29 @@ h2 {
 
 		.lightning {
 			position: absolute;
-			bottom: 80%;
-			left: 55%;
+			bottom: 86%;
+			left: 50%;
 			transform: translate(-50%, -50%);
 		}
 
 		.cirkles {
 			position: absolute;
-			bottom: 85%;
-			right: 0;
+			bottom: 87%;
+			right: -2%;
 			transform: translate(-50%, -50%);
 		}
 
 		.triangles {
 			position: absolute;
-			bottom: -5%;
-			left: 50%;
+			bottom: -4%;
+			left: 46%;
 			transform: translate(-50%, -50%);
 		}
 
 		.plus {
 			position: absolute;
-			bottom: 5%;
-			right: 0;
+			bottom: 8%;
+			right: -2%;
 			transform: translate(-50%, -50%);
 			height: 33px;
 			width: 33px;
@@ -480,6 +483,15 @@ h2 {
 		display: flex;
 		gap: 24px;
 		padding-bottom: 50px;
+
+		h2 {
+			font-size: 55px;
+			max-width: 588px;
+		} 
+
+		p {
+			font-size: 20px;
+		}
 	}
 
 	.video__wrap {
@@ -582,7 +594,7 @@ h2 {
 .service__section {
 	position: relative;
 	background-color: var(--background-primary-color);
-	padding-top: 150px;
+	padding-top: 100px;
 
 		.service__symbols {
 			position: absolute;
@@ -593,14 +605,14 @@ h2 {
 
 			.triangles {
 				position: absolute;
-				top: -15%;
-				left: 2%;
+				top: 0;
+				left: 5%;
 			}
 
 			.plus {
 				position: absolute;
-				top: 10%;
-				right: 10%;
+				top: 15%;
+				right: 1%;
 				transform: rotate(-31deg);
 			}
 		}
@@ -658,18 +670,26 @@ h2 {
 	display: grid;
 	grid-template-rows: repeat(auto-fit, 1fr);
 	grid-template-columns: repeat(auto-fit, 1fr);
-	gap: 18px;
+	gap: 24px;
 	
 
 		.section__title {
 			grid-column: 1/4 ;
-			padding-bottom: 98px;
+			padding-bottom: 65px;
 			padding-inline: 175px ;
+			font-size: 55px;
 		}
 
 		.service__section__item {
 			text-align: center;
 			display: grid;
+			justify-content: center;
+			padding-block: 43px ;
+
+			p {
+				max-width: 300px;
+				font-size: 18px;
+			}
 
 			span {
 				font-size: 28px;
@@ -796,6 +816,7 @@ h2 {
 
 	h2 {
 		padding-bottom: 70px;
+		font-size: 55px;
 	}
 
 	.portfolio__symbols {
@@ -807,9 +828,9 @@ h2 {
 
 		.circles {
 			position: absolute;
-			top: -10%;
-			right: 3%;
-			transform: rotate(-27deg);
+			top: 8%;
+			right: 5%;
+			transform: rotate(-27deg) scale(1.2);
 		}
 
 		.lightning {
@@ -817,6 +838,14 @@ h2 {
 			bottom: -15%;
 			left: -5%;
 		}
+		
+		.plus {
+			position: absolute;
+			top: -25%;
+			left: 0%;
+			transform: rotate(27deg);
+		}
+
 	}
 	
 }
@@ -1125,11 +1154,12 @@ h2 {
 /*contact us*/
 .contact-us__section {
 	background: #1C1C1E;
+	padding-top: 50px;
 
 	.contact-us__wrap {
 		position: relative;
 		display: flex;
-		gap: 173px;
+		justify-content: space-between;
 		align-items: center;
 		overflow: hidden;
 
@@ -1139,13 +1169,16 @@ h2 {
 			line-height: 66px;
 			font-size: 60px;
 			font-weight: 700;
+			max-width: 826px;
 		}
 
 		a {
-			height: 60px;
-			width: 201px;
-			padding: 0;
+			padding-block: 17px;
+			padding-inline: 50px;
+
 		}
+
+
 
 		.contact-us__symbols {
 			position: absolute;
@@ -1162,15 +1195,11 @@ h2 {
 
 			.plus {
 				position: absolute;
-				top: 20%;
-				right: 3%;
+				top: 17%;
+				right: 1%;
 			}
 		}
-	}
-
-
-
-	
+	}	
 }
 
 /* Lightbox */
@@ -1307,10 +1336,15 @@ html:target .lightbox{
 	justify-content: space-between;
 	padding-block: 22px;
 	align-items: center;
-	padding-block: 50px 100px;
+	padding-block: 60px 100px;
+	justify-content: space-between;
+
+	.links {
+		padding-left: 100px;
+	}
 
 	.copywriting a {
-		font-size: 16px;
+		font-size: 15px;
 		text-decoration: none;
 		color: var(--secondary-color);
 		font-weight: 400;
