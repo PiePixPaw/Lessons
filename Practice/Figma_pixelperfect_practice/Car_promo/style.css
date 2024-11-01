@@ -155,10 +155,7 @@ a {
 .text-drop__section {
 	position: relative;
 	width: 100vw;
-	height: 40vh;
 
-	
-	
 	.text__area {
 		display: flex;
 		flex-direction: column;
@@ -185,32 +182,39 @@ a {
 	}
 
 	.text-drop {
-		position: relative;
-		/* inset: 0; */
+		position:absolute;
+		top: -300%;
+		left: 0;
+		right: 0;
 		mask:
 		url('images/Maskgroup.svg') center/contain no-repeat, linear-gradient(#fff 0 0);
 	  	mask-composite:exclude;
 		background:rgb(184, 38, 38);
-		height: 100px;
+		height: 100vh;
+		z-index: 1000;
 
-		/* animation: paralaxAnimation;
-		animation-timeline: --paralaxTimeline; */
+
+		animation: paralaxAnimation;
+		animation-duration: 2s;
+		/* animation-timeline: --paralaxTimeline; */
 	}
 }
    
-/* @keyframes paralaxAnimation {
+@keyframes paralaxAnimation {
 	0%  {
-	  transform: scale(70);
+	  transform: scale(30);
+
 	}
   
-	20%, 100% {
-		transform: scale(0.5);
+	100% {
+		transform:scale(0.5);
 	}
-  } */
+  }
 
-.image-blocks__section {
-	background-color: black;
-}
+
+  .image-blocks__section {
+	background-color: rgb(0, 0, 0);
+  }
 
 .item1 {
 	position: relative;
