@@ -150,7 +150,13 @@ a {
 
 /* Text-drop */
 
+.page__content__wrap {
+	position: absolute;
+	top: 100vh;
 
+
+
+}
 
 .text-drop__section {
 	position: relative;
@@ -183,31 +189,84 @@ a {
 
 	.text-drop {
 		position:absolute;
-		top: -300%;
-		left: 0;
-		right: 0;
-		mask:
-		url('images/Maskgroup.svg') center/contain no-repeat, linear-gradient(#fff 0 0);
-	  	mask-composite:exclude;
-		background:rgb(184, 38, 38);
-		height: 100vh;
+		top: 0;
+		left: 50%;
+		
 		z-index: 1000;
-
+		transform: translateX(-50%);
 
 		animation: paralaxAnimation;
-		animation-duration: 2s;
-		/* animation-timeline: --paralaxTimeline; */
+		animation-duration: 5s;
+		/* animation-timeline: --paralax; */
+
+
+
+
+		.mask-text {
+			mask:
+			url('images/Maskgroup.svg') center/contain no-repeat, linear-gradient(#fff 0 0);
+			  mask-composite:exclude;
+			  background:rgb(184, 38, 38);
+			  height: 100vh;
+			  width: 20vw;
+			  
+		}
+
+		.background-bottom {
+			position:absolute;
+			height: 30%;
+			width: 200vw;
+			top: 99%;
+			left: -50vw;
+			background-color: rgb(184, 38, 38);
+			z-index: 1000;
+		}
+
+		.background-left {
+			position:absolute;
+			height: 100%;
+			width: 200%;
+			top: 0;
+			right: 99%;
+			background-color: rgb(184, 38, 38);
+			z-index: 1000;
+		}
+
+		.background-right {
+			position:absolute;
+			height: 100%;
+			width: 200%;
+			top: 0;
+			left: 99%;
+			background-color: rgb(184, 38, 38);
+			z-index: 1000;
+		}
+
+		/* .background-top {
+			position:absolute;
+			width: 100%;
+			bottom: 99%;
+			left: 0;
+			right: 0;
+			background-color: rgb(184, 38, 38);
+			z-index: 1000;
+		} */
 	}
 }
-   
 @keyframes paralaxAnimation {
 	0%  {
-	  transform: scale(30);
+		top: -400%;
+	  	transform: scale(80) translateX(-50%);
 
 	}
-  
+
+	99% {
+		animation-play-state: paused;
+	}
+
 	100% {
-		transform:scale(0.5);
+		transform:scale(1) translateX(-50%);
+		top: -400%;
 	}
   }
 
