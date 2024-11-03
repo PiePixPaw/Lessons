@@ -1,0 +1,753 @@
+/*main settings */
+
+:root {
+    --primary-color:#F2EDE4;
+    --secondary-color:#bd9b5e;
+    --background-color-primary: #1a1919;
+    --background-color-secondary: #40403E;
+    --text-color: #1a1919;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+body {
+    color: var(--primary-color);
+    margin: 0;
+    background-color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*header */
+/*header top*/
+
+
+.header__top{
+    background-color: #111111;
+}
+
+.header__top nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header__top nav a{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 5px 5px;
+    filter: brightness(50%);
+    font-size: 0.7rem;
+}
+
+.header__top nav a:hover {
+    filter: brightness(150%);
+}
+
+
+
+/*header middle*/
+.header__middle {
+    background-color: var(--background-color-primary);
+}
+
+.header__middle__wrap {
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.header__burger-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    cursor: url("honeycomb.png"), auto;
+}
+
+.header__burger-menu div{
+    width: 25px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 2px 0;
+}
+
+.header__logo {
+    display: flex;
+    margin: 0 auto 0  10px;
+}
+
+.header__logo a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header__logo span{
+    background-color: var(--secondary-color);
+    color: var(--background-color-primary);
+    border-radius: 5px;
+    padding: 2px; 
+}
+
+.header__search form{
+    display: flex;
+    border-radius: 15px;
+    --search-btn-width: 30px;
+}
+
+.header__search button {
+    position: relative;
+    display: flex;
+    cursor: url("honeycomb.png"), auto;
+    border-radius: 15px;
+    margin-right: calc(var(--search-btn-width) * -1) ;
+    width: var(--search-btn-width);
+    border: 0;
+    background: transparent;
+}
+
+.header__search button img{
+    filter:contrast(60%)
+}
+
+.header__search input{
+    min-width: 50px;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 30px;
+    border: 1px solid var(--background-color-secondary);
+    box-shadow: none ;
+    outline: 0;
+    background-color: var(--background-color-secondary);
+    color: var(--primary-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.header__search input:focus {
+    outline: 0;
+    border: 1px solid var(--secondary-color);
+    width: 700px;
+
+}
+
+.header__add__content_button {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    gap: 10px;
+}
+
+
+
+.header__logo__wrapper {
+    position: relative;
+}
+
+.header__add__content_button a:after {
+    position: absolute;
+    bottom: 2px;
+    right: -4px;
+    content:"";
+    background-image: url(up-arrrows.png);
+    width: 8px;
+    height: 8px;
+    background-size: cover;
+    background-color: var(--background-color-primary);
+    border: 1px solid var(--background-color-primary);
+    border-radius: 50%;
+}
+
+.header__profile {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.header__logo__wrapper:hover,
+.header__profile:hover {
+    filter: brightness(150%);
+}
+
+/*header bottom*/
+.header__bottom {
+    background-color: var(--background-color-primary);
+}
+
+.header__bottom nav {
+    display: flex;
+    justify-content: center;
+}
+
+
+.header__bottom .menu__item {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 36px;
+}
+
+.header__bottom nav a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    width: calc(1400px / 8); 
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: url("honeycomb.png"), auto;
+}
+
+.header__bottom nav a:after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--background-color-primary);
+}
+
+.dropdown__list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    
+
+    .dropdown__item {
+        position: relative;
+        top: calc(-36px * var(--count-col));
+        left: 0;
+        height: 36px;
+        background-color:#bd9b5e;
+        transition: top 0.3s ease-out;
+
+    }
+}
+
+.menu__item:hover  .dropdown__list{
+    pointer-events:all;
+}
+
+.menu__item:hover  .dropdown__list .dropdown__item{
+        top: 0;
+
+}
+
+.header__bottom nav a:hover:after {
+    background-color: var(--secondary-color);
+}
+
+.header__bottom nav a:hover {
+    background-color: var(--background-color-secondary);
+}
+
+/*footer*/
+/*footer top*/
+
+.footer__top {
+    background-color: var(--background-color-secondary);
+}
+
+.footer__top__content {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__top__content > span {
+    margin: 0 auto 0 auto;
+}
+
+.footer__top__apps {
+    display: flex;
+    gap: 10px;
+    cursor: url("honeycomb.png"), auto;
+
+}
+
+.footer__apple {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    margin: 5px;
+    background-color: var(--background-color-primary);
+    border-radius: 5px;
+    box-shadow: 1px 1px 0 #707070 inset, -1px -1px 0 #4b4a4a inset;
+    justify-content: center;  
+}
+
+.footer__apple__text {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+.footer__google {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    margin: 5px;
+    background-color: var(--background-color-primary);
+    border-radius: 5px;
+    box-shadow: 1px 1px 0 #707070 inset, -1px -1px 0 #4b4a4a inset;
+    justify-content: center;
+}
+
+.footer__google__text {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.footer__top__apps img {
+    padding: 2px;
+    height: 30px;
+    width: auto;
+}
+
+.footer__top__apps span:first-child {
+    font-size: 0.5rem;
+}
+
+.footer__apple:hover,
+.footer__google:hover{
+    box-shadow: 0 0 5px white;
+}
+
+
+/*footer midle*/
+
+.footer__middle {
+    background-color: var(--background-color-primary);
+    padding: 20px 0;
+}
+.row {
+    display: flex;
+}
+
+.col-5 {
+    width: calc(100% / 5);
+}
+
+.footer__middle .col-5:first-child nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer nav a{
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0 5px 0;
+}
+
+.footer__social__wrapper {
+    display: flex;
+    height: 40px;
+    gap: 10px;
+}
+
+.footer__social__wrapper img{
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .footer_header_text {
+    filter:brightness(60%) ;
+    font-size: 0.75rem;
+}
+
+.footer nav a:hover:not(.footer_header_text) {
+    color: var(--secondary-color);
+}
+
+.footer__social__wrapper img:hover{
+    transform: scale(1.2);
+}
+
+
+/*footer bottom*/
+
+.footer__bottom {
+    background-color: var(--background-color-primary);
+    border-top: 1px solid var(--background-color-secondary);
+}
+
+.footer__bottom__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+    padding: 15px 0 15px 0;
+}
+
+.footer__bottom__text {
+    font-size: 0.7rem;
+}
+
+.footer__bank__verification img {
+    filter: brightness(130%);
+}
+
+/*main*/
+/*main products*/
+.main {
+    color: var(--primary-color);
+}
+
+.main__background{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.main__background img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(40%);
+}
+
+
+.main h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.main h1::first-letter{
+    color: var(--secondary-color);
+}
+
+
+.products {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 190px;
+}
+
+.category {
+    width:250px;
+}
+
+.category a {
+    display: block;
+    margin-top:3px;
+    padding: 10px 0 10px 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform:capitalize;
+    background-color: var(--background-color-secondary);
+    color: var(--primary-color);
+    transition: all 0.2s ease-in-out;
+    cursor: url("honeycomb.png"), auto;
+    
+
+}
+
+.category a:hover {
+    box-shadow: inset -3px -3px 0px 0px var(--secondary-color), inset 3px 3px 0px 0px var(--secondary-color) ;
+}
+
+.subcategory {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+.subcategory__list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.subcategory__item {
+    /* width: calc(100% / 5); */
+    text-align:center;
+  
+}
+
+.subcategory__item a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: url("honeycomb.png"), auto;
+
+}
+
+
+.subcategory h2 {
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 60px;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.subcategory__item img {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 0 auto;
+    z-index: 3;
+    transition: all 0.3s ease-in-out;
+    /* opacity: 0; */
+}
+
+
+
+.subcategory__item .subcategory__item__name {
+    margin: 9 auto;
+    transform:translate(-20%);
+    padding-left:40px;
+    opacity: 0;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    color: var(--primary-color);
+}
+
+.subcategory__item__name::first-letter {
+    color: var(--secondary-color);
+}
+
+.subcategory__item img:hover ~ .cells .cell span{
+    /* filter: blur(5px); */
+    transform: rotate(-90deg);
+}
+
+.subcategory__item img:hover ~ .cells .cell .hexagon__letters{
+    /* filter: blur(5px); */
+    transform: rotate(0deg);
+}
+
+
+.subcategory__item img:hover {
+    transform: rotate(10deg) scale(1.3);
+}
+
+.subcategory__item img:hover ~ .subcategory__item__name {
+    opacity: 1;
+}
+
+
+/*hexagon*/
+.cell {
+    --cell-width: 110px;
+    width: var(--cell-width);
+    position: relative;
+    transform: rotate(90deg) translate(-120%, -60%);
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    font-weight: bolder;
+
+}
+
+.hexagon {
+    width: var(--hexagon-width);
+    height: calc(var(--hexagon-width) / sqrt(3));
+    color: var(--secondary-color);
+    text-transform: uppercase; 
+    text-align: start;
+    padding: 20px 5px;
+}
+
+.hexagon__letters {
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all 1s ease-in-out;
+}
+
+
+.hexagon span {
+    display: inline-block;
+    font-size: 0.8rem;
+    transition: all 1s ease-in-out;
+}
+
+
+
+.hexagon::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    bottom: calc(100% - 1px);
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--hexagon-width) / 2) solid transparent;
+    border-right: calc(var(--hexagon-width) / 2) solid transparent;
+    border-bottom-width: calc((var(--hexagon-width) / sqrt(3)) / 2);
+    border-bottom-style: solid;
+}
+
+.hexagon::after {
+    content: "";
+    position: absolute;
+    bottom: auto;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--hexagon-width) / 2) solid transparent;
+    border-right: calc(var(--hexagon-width) / 2) solid transparent;
+    border-top-width:calc((var(--hexagon-width) / sqrt(3)) / 2) ;
+    border-top-style: solid;
+}
+
+.hexagon--outer {
+    --hexagon-width: var(--cell-width); 
+    background-color: var(--secondary-color);
+    position: relative;
+    z-index: 1;
+  }
+
+.hexagon--outer:before {
+    border-bottom-color:var(--secondary-color);
+  }
+
+.hexagon--outer:after {
+    border-top-color:var(--secondary-color);
+  } 
+
+
+.hexagon--inner {
+    --hexagon-width: calc(var(--cell-width ) - 10px); 
+    background-color: var(--background-color-secondary);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    
+  }
+
+.hexagon--inner:before {
+    border-bottom-color:var(--background-color-secondary);
+
+  }
+
+.hexagon--inner:after {
+    border-top-color:var(--background-color-secondary);
+  } 
+
+  /*Sticky elements*/
+/*scroll to top*/
+
+/* .scroll__button {
+    position: sticky;
+    bottom: 0;
+    top: 600px;
+    display: block;
+    background-color: chartreuse;
+    border-radius: 10px;
+} */
+
+.scroll__button a {
+    cursor: pointer;
+}
+/*header sticky*/
+
+.header {
+    position: sticky;
+    z-index: 4;
+    top: 0;
+}
+
+/*main nsv sticky*/
+
+.category {
+    position: sticky;
+    top: 105px;
+
+}
+
+
+/*article*/
+.main__article {
+    padding-block: 50px;
+    position: relative;
+}
+
+article {
+    position: absolute;
+    opacity: 1;
+    z-index: 1;
+}
+
+.cell__row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.main__article .cell {
+    --cell-width: 80px;
+    margin-right: 60px;
+    filter: brightness(70%);
+    transition: all 0.3s ease-in-out;
+    cursor: url("beee.png"), auto;
+}
+
+
+.cell__row:nth-child(odd) {
+    margin-left: 140px;
+    margin-top: -10px;
+}
+
+.cell__row:nth-child(even) {
+    margin-left: 0;
+    margin-top: -10px;
+}
+
+.cells__wrapper .cell:hover {
+    transform: scale(1.2) rotate(90deg) translate(-120%, -60%);
+    filter: brightness(130%);
+}
+
+.cell__row:nth-child(even) .cell:nth-child(2) {
+    filter: brightness(120%);
+}
+
+.jqr {
+    color: red !important;
+}
+
+.hiddenCategory {
+    height: 0px !important; 
+
+}
+
+.category {
+    transition:all 0.5s ease-in-out;
+    overflow: hidden;
+}
