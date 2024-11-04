@@ -77,15 +77,15 @@ h3, p {
 
 .task4 {
 	.grid__container {
-		/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		/* grid-template-columns: repeat(3, 1fr); */
 	}
 
-	@media (max-width: 600px) {
+	/* @media (max-width: 600px) {
 		.grid__container {
 			grid-template-columns: 1fr;
 		}
-	}
+	} */
 }
 
 .task5 {
@@ -189,11 +189,11 @@ h3, p {
 
 /* checkbox */
 
-#blue__line:checked ~ .task .grid__container,
+/* #blue__line:checked ~ .task .grid__container,
 #green__line:checked ~ .task .grid__item,
 #red__line:checked ~ .task .item__content {
 	border: 1px solid transparent;
-} 
+}  */
 
 .label__wrap {
 	position: fixed;
@@ -234,4 +234,25 @@ h3, p {
 #red__line:checked ~ .label__wrap label[for="red__line"] {
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.747) inset;
 } 
+
+
+.body .main .task :where(.line__visible__blue, .line__visible__green, .line__visible__red) {
+	border: 1px solid transparent ;
+}
+
+.top__wrap{
+	position: relative;
+
+
+	.top {
+		position: fixed;
+		color: blueviolet;
+		background-color: rgb(133, 133, 133);
+		border-radius: 10px;
+		font-weight: bolder;
+		cursor: pointer;
+		padding: 15px;
+	}
+
+}
 

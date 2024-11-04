@@ -18,20 +18,68 @@
         </div>
         <div class="main">
             <div class="container">
-
-                <div class="main__wrap">
-                    <div id="parent">
-                        <div id="elem1">1</div>
-                        <div id="elem2">2</div>
-                        <div id="elem3">3</div>
-                        <div id="elem4">4</div>
-                        <div id="elem5">5</div>
-                        <div id="elem6">6</div>
-                        <div id="elem7">7</div>
-                    </div>
-
-
+                <div class="form1__wrap">
+                    <form action="">
+                        <div class="fields__wrap">
+                            <label for="">Name</label>
+                            <input type="text" minlength="3" maxlength="12">
+        
+                            <label for="">Email</label>
+                            <input type="email" required>
+        
+                            <label for="">Password</label>
+                            <input type="password" minlength="6" maxlength="99">
+        
+                            <button>Submit</button>
+                        </div>
+                    </form>
                 </div>
+                <div class="form2__wrap">
+                    <form action="">
+                        <fieldset>
+                            <legend>
+                                Choose your favorite
+                                <div class="radio__wrap">
+                                    <input type="radio" name="radio1" id="rad1">
+                                    <label for="rad1">Some 1</label>
+                                    <input type="radio" name="radio1" id="rad2">
+                                    <label for="rad2">Some 2</label>
+                                    <input type="radio" name="radio1" id="rad3">
+                                    <label for="rad3">Some 3</label>
+                                </div>
+
+                            </legend>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Choose your pet                              
+                            </legend>
+                            <label for=""> dinosaur<input type="checkbox"></label>
+                            <label for=""> mamut<input type="checkbox"></label>
+                            <label for=""> dog<input type="checkbox"></label>
+                            <label for=""> cat<input type="checkbox"></label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Choose your pet
+                            </legend>
+                            <select name="sel" id="select">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
+                                Choose your pet
+                            </legend>
+                            <textarea name="" id=""></textarea>
+                        </fieldset>
+                        <button>Submit</button>
+                    </form>
+                </div>
+
             </div>
         </div>
 

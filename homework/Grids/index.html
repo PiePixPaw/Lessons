@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		<title>Homework</title>
         <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.7.1.js"></script>
     </head>
-    <body>
+    <body class="body">
         <header class="header">
             <div class="wrapper">
                 <h1>HOMEWORK</h1>
@@ -14,14 +15,22 @@
         </header>
         <main class="main">
             <div class="wrapper">
-                <input type="checkbox" id="blue__line" hidden>
-                <input type="checkbox" id="green__line" hidden>
-                <input type="checkbox" id="red__line" hidden>
+                <div class="top__wrap">
+                    <label class="top" for="" >TOP</label>
+                </div>
+
+
+                <input type="checkbox" id="blue__line" hidden checked>
+                <input type="checkbox" id="green__line" hidden checked>
+                <input type="checkbox" id="red__line" hidden checked>
 
                 <div class="label__wrap">
-                    <label for="blue__line">Grid border</label>
-                    <label for="green__line">Item border</label>
-                    <label for="red__line">Content border</label>
+                    <label class="btn" for="blue__line" data-line-class="line__visible__blue"
+                    data-container-selector=".grid__container">Grid border</label>
+                    <label class="btn" for="green__line" data-line-class="line__visible__green"
+                    data-container-selector=".grid__item">Item border</label>
+                    <label class="btn" for="red__line" data-line-class="line__visible__red"
+                    data-container-selector=".item__content">Content border</label>
                 </div>
 
                 <div class="task1 task">
@@ -211,5 +220,46 @@
                 </div>
             </div>
         </main>
+        <script>
+            $('.grid__container').addClass('line__visible__blue' );
+            $('.grid__item').addClass('line__visible__green' );
+            $('.item__content').addClass('line__visible__red' );
+
+            $('.btn').on('click', function(e){
+                let container = $(this).attr('data-container-selector')
+                // let lineClass = $(this).attr('data-line-class')
+                let lineClass = $(this).data('line-class')
+                $(container).toggleClass(lineClass)
+                console.log(lineClass)
+            });
+
+            let check = $('#test');
+            console.log(check.attr('checked'));
+            console.log(check.prop('checked'));
+            check.on('change', function(e){
+                console.log(check.attr('checked'));
+                console.log(check.prop('checked'));
+            });
+
+            $('.top').on('click', function(e){
+                $('html').animate({scrollTop:0}, 5000, 'swing')
+            });
+
+            $('html').on('mousewheel', function(e){
+                $('html').stop()
+            })
+            
+            // $('label[for="blue__line"] ').on('click', function(e){
+            //     $('.grid__container').toggleClass('line__visible__blue')
+            // });
+
+            // $('label[for="green__line"] ').on('click', function(e){
+            //     $('.grid__item').toggleClass('line__visible__green')
+            // });
+
+            // $('label[for="red__line"]').on('click', function(e){
+            //     $('.item__content').toggleClass('line__visible__red')
+            // });
+        </script>
     </body>
     </html>
