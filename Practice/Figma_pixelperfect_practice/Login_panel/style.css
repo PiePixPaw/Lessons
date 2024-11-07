@@ -1,0 +1,73 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, h1 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1360px;
+  padding-inline: 30px;
+  margin-inline: auto;
+}
+
+.login__form form:has(#pass:valid):has(#log:valid) .btn {
+  pointer-events: all;
+}
+
+.admin__page {
+  display: none;
+}
+
+.btn {
+  pointer-events: none;
+}
+
+main:has(#signin:checked) .admin__page {
+  display: block;
+}
+
+main:has(#signin:checked) .login__page {
+  display: none;
+}
+
+.login__page {
+  width: 100vw;
+  height: 100vh;
+  padding-block: 156px;
+  background-color: #FFD1B0;
+  background-image: url("images/birdback.png");
+  background-size: auto calc(100% - 117px);
+  background-repeat: no-repeat;
+  background-position: 0 117px;
+}
+.login__screen {
+  height: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 70px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(254, 220, 197, 0.4666666667)), to(rgba(254, 221, 198, 0.5764705882)));
+  background-image: linear-gradient(rgba(254, 220, 197, 0.4666666667), rgba(254, 221, 198, 0.5764705882));
+  border-radius: 24px;
+  padding-block: 80px;
+  padding-inline: 92px 70px;
+}
+.login__screen .image__wrap img {
+  height: 100%;
+}

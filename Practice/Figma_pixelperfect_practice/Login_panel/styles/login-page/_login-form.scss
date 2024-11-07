@@ -1,0 +1,22 @@
+.login__form {
+
+    form:has(#pass:valid):has(#log:valid) .btn {
+        pointer-events:all;
+    }
+}
+
+.admin__page {
+    display: none;
+}
+
+.btn {
+    pointer-events: none;
+}
+
+main:has( #signin:checked ) .admin__page {
+    display: block;
+}
+
+main:has( #signin:checked ) .login__page {
+    display: none;
+}

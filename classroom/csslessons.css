@@ -22,32 +22,46 @@
   }
 
 
+.form1__wrap {
+  #text:checked ~ p {
+    display: none;
+  }
+}
 
-  .form1__wrap .fields__wrap {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 50px;
-    max-width: 400px;
+.form2__wrap {
 
-    input {
-      background-color: beige;
-      border-color: aquamarine;
-      border-radius: 10px;
 
-      &:hover {
-        background-color: rgb(199, 224, 88);
-        border-color: rgb(255, 127, 127);
-      }
-
-      &:focus {
-        outline-color: green;
-      }
-    }
+  .article1, .article2, .article3 {
+    display: none;
   }
 
-.radio__wrap {
+  #text1:checked ~ .article1,
+  #text2:checked ~ .article2,
+  #text3:checked ~ .article3 {
+    display: block
+  }
 
-	label:focus {
-		outline-color: blueviolet;
-	}
+}
+
+.form3__wrap {
+
+  .radio__blok1, .radio__blok2, .p1, .p2, .p3, .pp1, .pp2, .pp3 {
+    display: none;
+  }
+
+
+  #check1:checked ~ .radio__blok1,
+  #check2:checked ~ .radio__blok2 {
+    display: block;
+  }
+
+  #radio11:checked ~ .p1,
+  #radio12:checked ~ .p2,
+  #radio13:checked ~ .p3,
+  #radio21:checked ~ .pp1,
+  #radio22:checked ~ .pp2,
+  #radio23:checked ~ .pp3 {
+    display: block;
+  }
+
 }

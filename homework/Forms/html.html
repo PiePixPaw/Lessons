@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<title>Cloudview Inn</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="registration__screen">
+                <div class="form__box">
+                    <div class="title">
+                        <div>Cloudview Inn</div>
+                        <p>Experience rest above the clouds at Cloudview Inn, a peaceful escape crafted for climbers. Here, you can relax in comfortable rooms, enjoy scenic views, and find the ideal atmosphere for preparing for new heights. Reserve today for a rejuvenating mountain stay!</p>
+                    </div>
+                    <div class="form__wrap">
+                        <form class="form__body" action="" method="get">
+                        
+                            <div class="form-group room__type">
+                                <select name="room-type" id="room-type">
+                                    <option value="single">Single room</option>
+                                    <option value="studio">Studio room</option>
+                                    <option value="delux">Deluxe room</option>
+                                    <option value="presidential">Presidential suite</option>
+
+                                </select>
+                            </div>
+    
+                            <div class="form-group form-group--floating">
+                                <label class="form-label" for="">Room number</label>
+                                <input class="form-control" type="text" list="rooms__num" placeholder="placeholder">
+                                <datalist id="rooms__num">
+                                    <option value="007"></option>
+                                    <option value="666"></option>
+                                    <option value="013"></option>
+                                    <option value="407"></option>
+                                    <option value="880"></option>
+                                </datalist>
+                            </div>
+    
+                            <div class="form-group person-count">
+                                <label class="form-label" for="">Number of guests</label>
+                                <input class="form-control" type="number" disabled placeholder="placeholder">
+                                <input class="form-control" type="number" placeholder="placeholder">
+                            </div>
+    
+                            <div class="form-group dates">
+    
+                                <div class="dates__select">
+                                    <input id="arrival" class="form-control" type="date" autofocus>
+                                    <label class="form-label" for="arrival">Check-in Date</label>
+                                </div>
+    
+                                <div class="dates__select">
+                                    <input id="departure" class="form-control" type="date">
+                                    <label class="form-label" for="departure">Check-out Date</label>
+                                </div>
+    
+                            </div>
+    
+                            <fieldset class="form-group options">
+                                <legend>Additional options</legend>
+
+                                <div>
+                                    <input type="checkbox" class="form-control">
+                                    <label class="form-label" for="">Breakfast </label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="form-control" name="late-check-out">
+                                    <label class="form-label"  for="">Late check-out</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="form-control">
+                                    <label class="form-label" for="">Sea view</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="form-control">
+                                    <label class="form-label" for="">Thai massage</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="form-control">
+                                    <label class="form-label" for="">Pet friendly floor</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" class="form-control">
+                                    <label class="form-label" for="">Sea view</label>
+                                </div>
+                            </fieldset>
+    
+                            <div class="form-group phone">
+                                <label class="form-label" for="">Phone number</label>
+                                <input type="tel" placeholder="placeholder" disabled >
+                                <input type="tel" placeholder="placeholder">
+                            </div>
+    
+                            <fieldset class="form-group adds">
+                                <legend class="form-label" for="">More options</legend>
+                                <select name="" id="" multiple>
+                                    <option value="">Early check-in</option>
+                                    <option value="">Need a transfer</option>
+                                    <option value="">Allergen-free pillows</option>
+                                </select>
+                            </fieldset>
+    
+                            <div class="form-group btn">
+                                <button type="submit">Submit</button>
+                            </div>
+    
+    
+                        </form>
+
+                        <div class="room__photo">
+                            <div class="img__wrap">
+                                <div>
+                                    <img class="single" src="img/delux.jpg" alt="">
+                                    <img class="studio" src="img/sing.jpg" alt="">
+                                    <img class="delux" src="img/stud.jpg" alt="">
+                                    <img class="presidential" src="img/delux.jpg" alt="">   
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </main>
+
+    </body>
+    </html>

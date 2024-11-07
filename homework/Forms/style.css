@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	font-family: "Inter", sans-serif;
+	color: rgba(250, 245, 245, 0.945);
+}
+
+.registration__screen {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("img/back.jpg");
+	background-size:cover;
+	padding-top: 20vh;
+}
+
+.form__box {
+	max-width: 1000px;
+	margin-inline: 5% auto;
+	padding-block: 20px;
+	padding-inline: 20px;
+	background-color: #9b9b9b5b;
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+}
+
+.title {
+	div {
+		text-align: right;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 40px;
+		color: rgba(53, 50, 50, 0.712);
+
+		&::selection {
+			background-color: #ffba65be;
+		}
+	}
+
+	p::selection {
+		background-color: #ffba65be;
+	}
+}
+
+input:focus {
+	outline: 1px solid rgba(250, 245, 245, 0.945);
+}
+
+.form__body {
+	max-width: 400px;
+	display: grid;	
+	gap: 10px;
+	grid-template-areas: 	"type room" 
+							"checkin checkin"
+							"guest guest"
+							"options options"
+							"phone phone"
+							"adds adds"
+							"btn btn";
+}
+
+/* тип номера */
+.room__type {
+	grid-area: type;
+
+	select {
+		width: 100%;
+		height: 100%;
+		padding: 5px;
+		font-size: 14px;
+		color: rgba(250, 245, 245, 0.945);
+		background-color: #2b2a2acb;
+		border-radius: 10px;
+		border: none;
+	}
+}
+
+.person-count input:not([disabled]) {
+	display: none;
+}
+
+.form__body:has([value="delux"]:checked , [value="presidential"]:checked) .person-count input[disabled] {
+	display: none;
+}
+
+.form__body:has([value="delux"]:checked, [value="presidential"]:checked) .person-count input {
+	display: inline;
+}
+
+
+/* Номер */
+.form-group--floating {
+	grid-area: room;
+	position: relative;
+
+	.form-label {
+		position: absolute;
+		top: 50%;
+		left: 2%;
+		transform: translate(0, -50%);
+		transition: all 0.3s ease-in-out;
+		pointer-events: none;
+		font-size: 14px;
+		color: rgba(250, 245, 245, 0.945);
+	}
+
+	.form-control {
+		padding-top: 20px;
+		width: 100%;
+		height: 100%;
+		color: #9b9b9b5b;
+		background-color: #9b9b9b5b;
+		color: rgba(250, 245, 245, 0.945);
+		border-radius: 10px;
+		border: none;
+		
+
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	&:focus-within .form-label,
+	&:has(input:not(:placeholder-shown)) .form-label {
+		top: 20%;
+		left: 2%;
+		transform: translate(0, -20%);
+		color: rgba(250, 245, 245, 0.945);
+		font-size: 12px;
+	}
+}
+
+/* Колличество персон */
+.person-count {
+	grid-area: guest;
+	position: relative;
+	padding-inline: 5%;
+
+	label {
+		position: absolute;
+		font-size: 16px;
+		top: 50%;
+		left: 7%;
+		transform: translate(0, -50%);
+		transition: all 0.3s ease-in-out;
+		pointer-events: none;
+		font-size: 14px;
+		color: rgba(250, 245, 245, 0.945);
+	}
+
+	input {
+		padding-top: 20px;
+		padding-left: 10px;
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		background-color: #9b9b9b5b;
+		color: rgba(250, 245, 245, 0.945);
+		border: none;
+		
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
+	&:focus-within .form-label,
+	&:has(input:not(:placeholder-shown)) .form-label {
+		top: 20%;
+		left: 7%;
+		transform: translate(0, -20%);
+		color: rgba(250, 245, 245, 0.699);
+		font-size: 12px;
+	}
+}
+
+
+/* Даты */
+.dates {
+	grid-area: checkin;
+	display: flex;
+	justify-content: space-around;
+	font-size: 14px;
+	text-transform: lowercase;
+
+
+	.dates__select {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		
+
+		input {
+			padding: 5px;
+			color: #2b2a2acb;
+			background-color: #9b9b9b5b;
+			border-radius: 10px;
+			color: rgba(250, 245, 245, 0.945);
+			box-shadow: 0 0 2px rgb(255, 255, 255) inset;
+			border: none;
+
+			&::-webkit-calendar-picker-indicator {
+				background-image: url("img/calendar.png")
+			}
+
+			&::-webkit-datetime-edit-year-field,
+			&::-webkit-datetime-edit-day-field,
+			&::-webkit-datetime-edit-month-field {
+				color: #ffba65be;
+
+				
+			}
+
+			&::selection {
+				background-color: #ffba65be;;
+			}
+		}
+	
+	}	
+}
+
+/* опции */
+.options {
+	grid-area: options;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 5px;
+	font-size: 14px;
+	margin-inline: auto;
+	
+
+	legend {
+		text-align: center;
+		font-size: 12px;
+	}
+}
+
+.phone input:not([disabled]) {
+	display: none;
+}
+
+.form__body:has([name="late-check-out"]:checked) .phone input[disabled] {
+	display: none;
+}
+
+.form__body:has([name="late-check-out"]:checked) .phone input {
+	display: block;
+}
+
+/* телефон */
+.phone {
+	grid-area: phone;
+	position: relative;
+	padding-inline: 5%;
+
+	label {
+		position: absolute;
+		font-size: 16px;
+		top: 50%;
+		left: 7%;
+		transform: translate(0, -50%);
+		transition: all 0.3s ease-in-out;
+		pointer-events: none;
+		font-size: 14px;
+		color: rgba(250, 245, 245, 0.945);
+	}
+
+	input {
+		padding-top: 20px;
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		border: none;
+		background-color: #9b9b9b5b;
+
+		&::placeholder {
+			color: transparent;
+		}
+	}
+
+	&:focus-within .form-label,
+	&:has(input:not(:placeholder-shown)) .form-label {
+		top: 20%;
+		left: 7%;
+		transform: translate(0, -20%);
+		color: rgba(250, 245, 245, 0.753);
+		font-size: 12px;
+	}
+}
+
+/* допы */
+.adds {
+	grid-area: adds;
+
+	legend {
+		text-align: center;
+		font-size: 12px;
+	}
+
+	select {
+		width: 100%;
+		color: #2b2a2acb;
+		padding: 5px;
+		border-radius: 10px;
+		overflow: hidden;
+		background-color: #9b9b9b5b;
+		color: rgba(250, 245, 245, 0.945);
+	}
+}
+
+/* отправка */
+
+.btn {
+	grid-area: btn;
+
+	button{
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		padding: 10px;
+		color: #2b2a2acb;
+		background-color: #ffba65be;
+		border-radius: 10px;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+	
+}
+
+
+/* фото */
+
+.room__photo {
+
+	height: 100%;
+	width: 100%;
+
+
+	.img__wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			max-height: 454px;
+			opacity: 0;
+			transition: all 1s ease-in-out;
+			border-radius: 10px;
+		}
+	}
+
+}
+
+.form__wrap:has([value="delux"]:checked) .delux {
+	opacity: 1;
+}
+
+.form__wrap:has([value="presidential"]:checked) .presidential {
+	opacity: 1;
+}
+
+.form__wrap:has([value="studio"]:checked)  .studio {
+	opacity: 1;
+}
+
+.form__wrap:has([value="single"]:checked) .single {
+	opacity: 1;
+}
+
+
+.form__wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
