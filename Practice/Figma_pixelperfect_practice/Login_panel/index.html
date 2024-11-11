@@ -16,18 +16,22 @@
                             <div class="login__form">
                                 <h1>Login</h1>
                                 <form action="">
-                                    <div class="form-group">
-                                        <label for="">Login</label>
-                                        <input type="text" pattern="qwerty" required id="log">
+                                    <div class="form__wrap">
+                                        <div class="form-group form-group--floating">
+                                            <label class="form-label" for="">Login</label>
+                                            <input class="form-control" type="text" pattern="qwerty" required id="log" 
+                                            placeholder="1234567">
+                                        </div>
+                                        <div class="form-group form-group--floating">
+                                            <label class="form-label" for="">Password</label>   
+                                            <input class="form-control" type="text" pattern="pavel" id="pass" required placeholder="1234567">                             
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label class="btn" for="signin">Sign in</label>
+                                            <input class="login_btn" type="checkbox" id="signin" >
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="">Password</label>   
-                                        <input type="text" pattern="pavel" id="pass" required>                             
-                                    </div>
-                                    <div class="form-group"> 
-                                        <label class="btn" for="signin">Sign in</label>
-                                        <input class="login_btn" type="checkbox" id="signin">
-                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -37,7 +41,6 @@
                     </div>
                 </div>
                 <div class="admin__page">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam quaerat, nostrum sint commodi magni laudantium minus architecto nemo neque quasi?
                 </div>   
         </main>
 

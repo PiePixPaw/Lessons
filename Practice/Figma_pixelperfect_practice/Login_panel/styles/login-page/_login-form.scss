@@ -5,12 +5,10 @@
     }
 }
 
-.admin__page {
-    display: none;
-}
-
 .btn {
     pointer-events: none;
+    padding:5px 25px;
+    border-radius: 10px;
 }
 
 main:has( #signin:checked ) .admin__page {
@@ -20,3 +18,11 @@ main:has( #signin:checked ) .admin__page {
 main:has( #signin:checked ) .login__page {
     display: none;
 }
+
+.form__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+

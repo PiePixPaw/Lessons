@@ -1,41 +1,77 @@
+.form-group--floating {
+  position: relative; }
+  .form-group--floating .form-label {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    color: #fae3e3; }
+  .form-group--floating .form-control {
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    padding-inline: 15px;
+    padding-bottom: 2px;
+    background-color: #e49279; }
+    .form-group--floating .form-control::-webkit-input-placeholder {
+      color: transparent; }
+    .form-group--floating .form-control:-ms-input-placeholder {
+      color: transparent; }
+    .form-group--floating .form-control::-ms-input-placeholder {
+      color: transparent; }
+    .form-group--floating .form-control::placeholder {
+      color: transparent; }
+  .form-group--floating:focus-within .form-label, .form-group--floating:has(input:not(:placeholder-shown)) .form-label {
+    top: 20%;
+    left: 2%;
+    -webkit-transform: translate(0, -20%);
+            transform: translate(0, -20%);
+    font-size: 12px; }
+
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+          box-sizing: border-box; }
 
 html, body, h1 {
-  margin: 0;
-}
+  margin: 0; }
 
 html {
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
 .container {
   max-width: 1360px;
   padding-inline: 30px;
-  margin-inline: auto;
-}
+  margin-inline: auto; }
 
 .login__form form:has(#pass:valid):has(#log:valid) .btn {
-  pointer-events: all;
-}
-
-.admin__page {
-  display: none;
-}
+  pointer-events: all; }
 
 .btn {
   pointer-events: none;
-}
+  padding: 5px 25px;
+  border-radius: 10px; }
 
 main:has(#signin:checked) .admin__page {
-  display: block;
-}
+  display: block; }
 
 main:has(#signin:checked) .login__page {
-  display: none;
-}
+  display: none; }
+
+.form__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px; }
 
 .login__page {
   width: 100vw;
@@ -45,8 +81,7 @@ main:has(#signin:checked) .login__page {
   background-image: url("images/birdback.png");
   background-size: auto calc(100% - 117px);
   background-repeat: no-repeat;
-  background-position: 0 117px;
-}
+  background-position: 0 117px; }
 .login__screen {
   height: 100%;
   max-width: 1360px;
@@ -62,12 +97,23 @@ main:has(#signin:checked) .login__page {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(254, 220, 197, 0.4666666667)), to(rgba(254, 221, 198, 0.5764705882)));
-  background-image: linear-gradient(rgba(254, 220, 197, 0.4666666667), rgba(254, 221, 198, 0.5764705882));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fedcc577), to(#feddc693));
+  background-image: linear-gradient(#fedcc577, #feddc693);
   border-radius: 24px;
   padding-block: 80px;
-  padding-inline: 92px 70px;
-}
-.login__screen .image__wrap img {
-  height: 100%;
-}
+  padding-inline: 92px 70px; }
+  .login__screen .image__wrap img {
+    height: 100%; }
+
+.admin__page {
+  width: 100vw;
+  height: 100vh;
+  padding-block: 156px;
+  background-color: #FFD1B0;
+  background-image: url("images/birdback.png");
+  background-size: auto calc(100% - 117px);
+  background-repeat: no-repeat;
+  background-position: 0 117px;
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

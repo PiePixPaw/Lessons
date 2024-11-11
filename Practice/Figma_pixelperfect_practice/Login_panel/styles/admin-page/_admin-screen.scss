@@ -1,0 +1,15 @@
+.admin {
+    
+
+    &__page {
+        width: 100vw;
+        height: 100vh;
+        padding-block: 156px;
+        background-color: #FFD1B0 ;
+        background-image: url('images/birdback.png');
+        background-size: auto calc(100% - 117px) ;
+        background-repeat: no-repeat;
+        background-position: 0 117px;
+        display: none;
+    }
+}
